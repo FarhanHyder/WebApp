@@ -27,5 +27,9 @@ node {
     stage('Publish build info') {
         server.publishBuildInfo buildInfo
     }
+
+	stage('build pipeline') {
+		build job: 'static-code-analysis'
+	}
     }
 	 
