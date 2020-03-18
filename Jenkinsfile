@@ -29,7 +29,7 @@ node {
     }
 
 	stage('build pipeline') {
-		build job: 'static-code-analysis'
+		build job: 'static-code-analyisis'
 	}
     }
 	 
