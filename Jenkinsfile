@@ -23,10 +23,6 @@ node {
     stage('Maven build') {
         buildInfo = rtMaven.run pom: 'pom.xml', goals: 'clean install'
     }
-
-	stage('Deploy to QA') {
-		deploy adapters: tomcat7{url: 'http://3.16.15.137:8080', credentialsId: QAid}, war: '**/*.war', contextPath: '/QA'
-	}
 	
     stage('Publish build info') {
         server.publishBuildInfo buildInfo
